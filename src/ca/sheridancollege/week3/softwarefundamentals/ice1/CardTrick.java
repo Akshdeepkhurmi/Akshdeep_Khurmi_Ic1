@@ -2,7 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CardTrick {
-
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
         Random random = new Random();
@@ -18,10 +17,8 @@ public class CardTrick {
         System.out.print("Pick a card - Enter the value of your card (1-13): ");
         int value = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
-
         System.out.print("Enter the suit of your card (Heart, Diamonds, Spades, Clubs): ");
         String suit = scanner.nextLine();
-
         Card userCard = new Card();
         userCard.setValue(value);
         userCard.setSuit(suit);
