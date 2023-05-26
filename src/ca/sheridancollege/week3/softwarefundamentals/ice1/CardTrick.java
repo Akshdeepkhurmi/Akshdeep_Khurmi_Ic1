@@ -26,6 +26,10 @@ public class CardTrick {
         userCard.setValue(value);
         userCard.setSuit(suit);
 
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);  // Set the card value of your choice (1-13)
+        luckyCard.setSuit("Hearts");  // Set the suit of your choice ("Hearts", "Diamonds", "Spades", "Clubs")
+
         boolean found = false;
         for (Card card : magicHand) {
             if (card.getValue() == userCard.getValue() && card.getSuit().equalsIgnoreCase(userCard.getSuit())) {
@@ -34,10 +38,24 @@ public class CardTrick {
             }
         }
 
+        boolean isLuckyCard = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                isLuckyCard = true;
+                break;
+            }
+        }
+
         if (found) {
             System.out.println("Congratulations! Your card is in the magic hand.");
         } else {
             System.out.println("Sorry! Your card is not in the magic hand.");
+        }
+
+        if (isLuckyCard) {
+            System.out.println("Congratulations! The lucky card is in the magic hand.");
+        } else {
+            System.out.println("Sorry! The lucky card is not in the magic hand.");
         }
     }
 }
